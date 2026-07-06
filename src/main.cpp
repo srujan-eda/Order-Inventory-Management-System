@@ -1,19 +1,22 @@
 #include <iostream>
 #include "../include/Product.h"
+#include "../include/Inventory.h"
 
 int main(){
-    Product mouse(101,"wireless mouse",799.00,10);
+    Inventory inventory;
 
-    std::cout<<"ID "<<mouse.getID()<<'\n';
-    std::cout<<"Name "<<mouse.getName()<<'\n';
-    std::cout<<"Price "<<mouse.getPrice()<<'\n';
-    std::cout<<"Stock "<<mouse.getStock()<<'\n';
+    Product mouse(101, "Wireless Mouse", 799.0, 10);
+    Product keyboard(102, "Keyboard", 1499.0, 5);
 
-    mouse.increaseStock(5);
-    std::cout<<"Stock "<<mouse.getStock()<<'\n';
+    std::cout << inventory.addProduct(mouse) << '\n';
+    std::cout << inventory.addProduct(keyboard) << '\n';
 
-    mouse.decreaseStock(10);
-    std::cout<<"Stock "<<mouse.getStock()<<'\n';
-    
+    // Adding mouse again will 
+    std::cout << inventory.addProduct(mouse) << '\n';
+
+    inventory.updateStock(101, 5);
+
+    inventory.displayInventory();
+
     return 0;
 }
