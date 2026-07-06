@@ -17,6 +17,6 @@ void Order::addItem(int productID,int quantity){
     items.push_back(item);
 }
 
-const std::vector<OrderItem> &Order::getOrder() const{
+const std::vector<OrderItem> &Order::getItems() const{
     return items;
 }

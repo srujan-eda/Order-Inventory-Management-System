@@ -18,7 +18,7 @@ public:
 
     void addItem(int productID,int quantity);
 
-    const std::vector<OrderItem> &getOrder() const;
+    const std::vector<OrderItem> &getItems() const;
 
 };
 #endif
